@@ -1,7 +1,12 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Главная</router-link>
+    <router-link to="/cart">Корзина</router-link>
+    <router-link to="/catalog">Каталог</router-link>
+    <router-link to="/create-order">Заказать</router-link>
+    <router-link to="/sign-up">Регистрация</router-link>
+    <router-link to="/sign-in">Вход</router-link>
+    <router-link to="/sign-out">Выход</router-link>
   </nav>
   <router-view/>
 </template>
@@ -17,6 +22,9 @@
 
 nav {
   padding: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 nav a {
