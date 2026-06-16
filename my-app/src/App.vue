@@ -1,12 +1,17 @@
+<script setup>
+
+  let data = localStorage.getItem('user_token');
+
+</script>
 <template>
   <nav>
     <router-link to="/">Главная</router-link>
     <router-link to="/cart">Корзина</router-link>
     <router-link to="/catalog">Каталог</router-link>
     <router-link to="/create-order">Заказать</router-link>
-    <router-link to="/sign-up">Регистрация</router-link>
-    <router-link to="/sign-in">Вход</router-link>
-    <router-link to="/sign-out">Выход</router-link>
+    <router-link v-show="!data" to="/sign-up">Регистрация</router-link>
+    <router-link v-show="!data" to="/sign-in">Вход</router-link>
+    <router-link v-show="data" to="/sign-out">Выход</router-link>
   </nav>
   <router-view/>
 </template>
