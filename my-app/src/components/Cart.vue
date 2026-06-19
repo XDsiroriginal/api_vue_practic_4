@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, computed, ref } from 'vue'
 import { useApi } from './api.js'
+import router from "@/router";
 
 const { data: carts, loading, error, get, del } = useApi()
 
@@ -72,6 +73,10 @@ const clearCart = async () => {
     await removeItem(item.id)
   }
 }
+
+const goToCreateOrder = () => {
+  router.push({ name: 'create-order' })}
+
 </script>
 
 <template>
@@ -155,7 +160,7 @@ const clearCart = async () => {
             <span>{{ totalPrice }} ₽</span>
           </div>
         </div>
-        <button class="checkout-btn">Оформить заказ</button>
+          <button @click="goToCreateOrder()" class="checkout-btn">Оформить заказ</button>
       </div>
     </div>
   </div>
